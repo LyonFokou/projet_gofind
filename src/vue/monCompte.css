@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 1400px;
+    height: 80px;
+}
+header a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+.logo {
+    margin-left: 20px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+}
+.logo:hover {
+    color: #e63946 ;
+}
+.nav{
+    display: flex;
+    justify-content:space-between;
+    width: 400px;
+}
+.nav a:hover{
+    text-decoration: underline;
+    color: #e63946;
+}
+#header-active{
+    color: #e63946;
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex: 1;
+    padding: 20px 50px;
+    width: 1400px;
+    background-color: #ffffff;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* Sidebar */
+.sidebar_nav{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.sidebar_nav a {
+    color: rgb(122, 120, 120);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 30px;
+}
+.sidebar {
+    width: 350px;
+    height: 400px;
+    background: #ffffff;
+    padding: 20px;
+
+}
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+.sidebar a.active{
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.sidebar a:hover{
+    color: #e63946;
+    text-decoration: underline;
+}
+.delete-account {
+    margin-top: 30px;
+    background: #dd656f;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.delete-account:hover{
+    background: #79262d;
+}
+
+/* Profile Section */
+.profile {
+    flex: 1;
+    background: #ffffff;
+    margin-left: 20px;
+    padding: 30px;
+    border-left: 1px solid #ddd;
+    box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s;
+    
+}
+.profile h2 {
+    color: #e63946;
+    margin-bottom: 30px;
+}
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.fields {
+    flex: 2;
+}
+.fields label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.fields input {
+    width: 90%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f5f5f5;
+}
+
+/* Profile Picture */
+.profile-picture {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.picture-placeholder {
+    width: 250px;
+    height: 250px;
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background: black;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1400px;
+}
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-links a:hover {
+    color: #e63946;
+}
+
+/* fenetre flottante */
+#popupOverlay form{
+    width: 100%;
+}
+
+.btn-submit {
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+.btn-submit:hover {
+    background: #e63946;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 350px;
+    border-radius: 5px;
+    animation: slideIn 0.3s;
+  }
+  .popup-content img {
+    width: 80px;
+    height: 80px;margin-bottom: 20px;
+  }
+  .popup-content #texte-popup{
+   margin: 5px 0;
+   font-size: 18px;
+   font-weight: bold;
+   text-align: center;
+  }
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  @keyframes slideIn {
+    from {transform: translateY(-100px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+  }
+  

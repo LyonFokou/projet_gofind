@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - GoFind</title>
+    <link rel="stylesheet" href="signup.css?v=1.0">
+</head>
+
+<body>
+<!-- header-->
+    <header class="header">GoFind</header>
+<!-- fenetre principale-->
+    <main class="main">
+        <!-- section d'image-->
+        <div class="image-section">
+            <img src="images/2.webp" alt="Road Trip">
+        </div>
+        <!-- formulaire-->
+        <div class="form-section">
+            <h1>INSCRIPTION</h1>
+            <p class="subtitle">Entrez vos informations</p>
+            <form id="register-form" method="post" action="signup.php">
+                <div class="form-group">
+                    <label for="lastname">Noms</label>
+                    <input type="text" id="lastname" name="noms" required>
+                </div>
+                <div class="form-group">
+                    <label for="firstname">Prénoms</label>
+                    <input type="text" id="firstname" name="prenoms" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Date de naissance</label>
+                    <input type="text" id="birthday" name="date_naissance" onfocus="this.type='date'" required>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sexe</label>
+                    <select name="sexe" id="sex"  required>
+                        <option value=""></option>
+                        <option value="Feminin">Feminin</option>
+                        <option value="Masculin">Masculin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="mot_de_passe" required>
+                </div>
+                <input type="submit" class="btn-submit" name="submit_add" value="s'inscrire">
+            </form>
+            <p class="login-link">Déjà un compte ? <a href="index.html">se connecter</a></p>
+        </div>
+    </main>
+<!-- fenetre flottante-->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="redirect()">&times;</span>
+            <img src="images/3.png">
+            <p id="texte-popup">VOTRE COMPTE A ETE SUPPRIMER</p>
+            <P>Inscrivez-vous pour continuer</P>
+            <button class="btn-submit" onclick="redirect()">confirmer</button>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+<!-- light javascript-->
+    <script>
+        function redirect(){
+            window.location.href = 'http://localhost/gofind/src/vue/signup.html';
+        }
+        function openPopup() {
+            document.getElementById("popupOverlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+        const params = new URLSearchParams(window.location.search);
+        const display = params.get("display");
+        if (display) {
+            document.getElementById("popupOverlay").style.display = display;
+        }
+    </script>
+</body>
+
+</html>

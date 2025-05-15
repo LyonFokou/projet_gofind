@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se Connecter - GoFind</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+
+<body>
+    <header class="header">GoFind</header>
+    <main class="main">
+        <div class="image-section">
+            <img src="images/1.jpg">
+        </div>
+        <div class="form-section">
+            <h1>SE CONNECTER</h1>
+            <p class="subtitle">Entrez vos Identifiants</p>
+            <form id="loginForm" method="post" action="index.php">
+                <div class="form-group">
+                    <label for="email-field"><b>Adresse Email </b></label>
+                    <input type="email" id="email-field" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-field"><b>Mot de passe</b></label>
+                    <input type="password" id="password-field" name="password" required>
+                </div>
+                <input type="submit" class="btn-submit" value="Connexion">
+            </form>
+            <p class="login-link">Pas de compte ? <a href="signup.html">S'inscrire</a></p>
+        </div>
+    </main>
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="redirect()">&times;</span>
+            <img src="images/3.png">
+            <p id="texte-popup">VOTRE COMPTE A BIEN ETE CRÉÉ</p>
+            <P>Connectez-vous pour continuer</P>
+            <button class="btn-submit" onclick="redirect()">confirmer</button>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+    <script>
+        function redirect(){
+            window.location.href = 'http://localhost/gofind/src/vue/index.html';
+        }
+        function openPopup() {
+            document.getElementById("popupOverlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const display = params.get("display");
+        if (display) {
+            document.getElementById("popupOverlay").style.display = display;
+        }
+    </script>
+</body>
+
+</html>

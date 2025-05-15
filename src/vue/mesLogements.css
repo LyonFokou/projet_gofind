@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 1400px;
+    height: 80px;
+}
+header a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logo {
+    margin-left: 20px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+}
+.logo:hover {
+    color: #e63946 ;
+}
+.nav{
+    display: flex;
+    justify-content:space-between;
+    width: 400px;
+}
+.nav a:hover{
+    text-decoration: underline;
+    color: #e63946;
+}
+#header-active{
+    color: #e63946;
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex: 1;
+    padding: 20px 50px;
+    width: 1400px;
+    background-color: #ffffff;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* Sidebar */
+.sidebar_nav{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.sidebar_nav a {
+    color: rgb(122, 120, 120);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 30px;
+}
+.sidebar a.active{
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.sidebar {
+    width: 350px;
+    height: 400px;
+    background: #ffffff;
+    padding: 20px;
+
+}
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.sidebar a:hover{
+    color: #e63946;
+    text-decoration: underline;
+}
+.delete-account {
+    margin-top: 30px;
+    background: #dd656f;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.delete-account:hover{
+    background: #79262d;
+}
+
+/* section principale */
+.profile {
+    flex: 1;
+    background: #ffffff;
+    margin-left: 20px;
+    padding: 30px;
+    border-left: 1px solid #ddd;
+    box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.2);
+
+    
+}
+.profile h2 {
+    color: #e63946;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.new-element-container{
+    display: flex;
+    justify-content: end;
+}
+.new-element{
+    background: #dd656f;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.new-element:hover{
+    background: #79262d;
+}
+/* cartes*/
+.logement-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 19px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logement-container a{
+    color: inherit;
+    text-decoration: none;
+}
+.logement-card {
+    background: #fff;
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.logement-card:hover {
+    transform: translateY(-5px);
+}
+
+.logement-title {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 19px;
+}
+
+.logement-detail {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+.logement-image img {
+    max-width: 100%;
+    height: 160px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.no-image{
+    
+    max-width: 100%;
+    height: 160px;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #ccc;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+    background: black;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1400px;
+}
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-links a:hover {
+    color: #e63946;
+}
+
+
+/* formulaire ajout */
+.form-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+  .form-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 75px 75px 75px 75px 60px;
+    gap: 10px;
+    background-color: #ffffff;
+    box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: auto;
+    margin-top: 10%;
+    width: 650px;
+    
+    border-radius: 5px;
+    animation: slideIn 0.3s;
+  }
+.input-group0{
+    color: #e63946;
+    margin-top: 10px;
+    font-size: large;
+    font-weight: bold;
+    font-family: "Poppins";
+}
+.input-picture{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    grid-column: 2;
+    grid-row: 1/4;
+}
+
+.input-picture span {
+    font-weight: bold;
+}
+
+  #photo {
+    display: none;
+  }
+  #preview {
+    height: 150px;
+    width: 220px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 10px;
+    border: 2px sloid #ccc;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+  }
+
+
+  .custom-file-label {
+    padding: 8px 15px;
+    background-color: #dd656f;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .custom-file-label:hover {
+    background-color: #851616;
+  }
+
+.input-group{
+    margin: 0 20px;
+}
+.input-group input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    background-color: rgb(233, 233, 233);
+    
+}
+.input-group select{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    background-color: rgb(233, 233, 233);
+}
+ 
+.close-btn-form {
+    width: 120px;
+    height: 40px;
+    padding: 12px;
+    padding-left: 35px;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+#close-btn-form-container{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-add {
+  width: 120px;
+  height: 40px;
+  padding: 12px;
+  background: #73d470;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+/* fenetre flottante */
+#popupOverlay form{
+    width: 100%;
+}
+.btn-submit {
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+.btn-submit:hover {
+    background: #e63946;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 350px;
+    border-radius: 5px;
+    animation: slideIn 0.3s;
+  }
+  .popup-content img {
+    width: 80px;
+    height: 80px;margin-bottom: 20px;
+  }
+  .popup-content #texte-popup{
+   margin: 5px 0;
+   font-size: 18px;
+   font-weight: bold;
+   text-align: center;
+  }
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  @keyframes slideIn {
+    from {transform: translateY(-100px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+  }
+  
+

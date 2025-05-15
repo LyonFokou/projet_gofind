@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background: #000;
+    width: 1400px;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.main {
+    display: flex;
+    min-height: calc(90vh - 100px);
+    width: 1400px;
+}
+
+.image-section {
+    flex: 1;
+    border-left: 1px solid #000;
+}
+
+.image-section img {
+    width: 800px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-section {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #000;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: grey;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 2px solid #7a7a7a;
+    border-radius: 15px;
+    height: 50px;
+}
+
+.btn-submit {
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.btn-submit:hover {
+    background: #e63946;
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #e63946;
+    text-decoration: none;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
+}
+
+.footer {
+    background: #000;
+    width: 1400px;
+    height: 50px;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 350px;
+    border-radius: 5px;
+    animation: slideIn 0.3s;
+  }
+  .popup-content img {
+    width: 80px;
+    height: 80px;margin-bottom: 20px;
+  }
+  .popup-content #texte-popup{
+   margin: 5px 0;
+   font-size: 18px;
+   font-weight: bold;
+   text-align: center;
+  }
+  
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  @keyframes slideIn {
+    from {transform: translateY(-100px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+  }
+  
+
